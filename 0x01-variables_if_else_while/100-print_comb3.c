@@ -1,9 +1,10 @@
 #include <stdio.h>
 
 /**
- * main - prints all possible different combinations of two digits
+ * main - prints the possible different Combination of two digits
  * Return: ALways 0 (Success)
 */
+
 int main(void)
 {
 	int n, m;
