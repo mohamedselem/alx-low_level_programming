@@ -3,7 +3,7 @@
 /**
  * main - entry point
  *
- * Description: using sizeof to print the size of various types.
+ * Description: Apply using size of to prints size of Various types.
  *
  * Return: Always 0 (Success)
 */
