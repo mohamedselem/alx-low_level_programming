@@ -3,7 +3,7 @@
 /**
  * main - entry point
  *
- * Description: print all alphapet letter
+ * Description: Prints All the alphapet letter
  *
  * Return: 0 (success)
 */

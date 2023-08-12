@@ -5,7 +5,7 @@
 /**
  * main - entry point
  *
- * Description: print the value of n status
+ * Description: prints all The value of N status
  *
  * Return: 0 (success)
 */
