@@ -4,7 +4,7 @@
 /**
  * *array_range - Function can creates an array of integers
  * @min: minimum range of value stored
- * @max: maximum range of value stored 
+ * @max: maximum range of value stored
  *
  * Return: pointer to the new array
 */
