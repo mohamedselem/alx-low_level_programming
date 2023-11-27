@@ -7,7 +7,7 @@
 #include <elf.h>
 
 /**
- * _checkelf - checks if file is elf type
+ * _checkelf - func to checks if the file is elf type
  *
  * @h: header
  *
@@ -20,7 +20,7 @@ void _checkelf(char *h)
 }
 
 /**
- * _magic - print elf magic
+ * _magic - func to print elf magic
  *
  * @h: header
  *
@@ -28,20 +28,20 @@ void _checkelf(char *h)
  */
 void _magic(char *h)
 {
-	int i;
+	int z;
 
 	printf("ELF Header:\n  Magic:   ");
 
-	for (i = 0; i < 15; i++)
-		printf("%02x ", (unsigned int)h[i]);
-	printf("%02x", (unsigned int)h[i]);
+	for (z = 0; z < 15; z++)
+		printf("%02x ", (unsigned int)h[z]);
+	printf("%02x", (unsigned int)h[z]);
 
 	printf("\n");
 }
 /**
- * _class - print elf class
+ * _class - func to print elf class
  *
- * @h: header
+ * @h: the header
  * @x64: 1 if x64, 0 if x32
  *
  * Return: No Return
@@ -60,9 +60,9 @@ void _class(char *h, int x64)
 		printf("ELF64\n");
 }
 /**
- * _data - print elf data
+ * _data - func to print elf data
  *
- * @h: header
+ * @h: the Header
  *
  * Return: No Return
  */
@@ -78,7 +78,7 @@ void _data(char *h)
 		printf("<unknown: %02hx>\n", h[5]);
 }
 /**
- * _version - print elf version
+ * _version - func can print elf versions
  *
  * @h: header
  *
@@ -97,7 +97,7 @@ void _version(char *h)
 	}
 }
 /**
- * _os - print elf os/ABI
+ * _os - func can print elf os/abi
  *
  * @h: header
  *
@@ -145,9 +145,9 @@ void _os(char *h)
 		printf("<unknown: %02hx>\n", h[7]);
 }
 /**
- * _abiv - checks abi version
+ * _abiv - func to checks abi versions
  *
- * @h: header
+ * @h: the header
  *
  * Return: No Return
  */
@@ -157,10 +157,10 @@ void _abiv(char *h)
 	printf("%d\n", h[8]);
 }
 /**
- * _type - print elf type
+ * _type - func do print elf type
  *
- * @h: header
- * @x64: variable to check if x64 (1) or x32 (0)
+ * @h: the header
+ * @x64: var to check if x64 equal (1) or x32 (0)
  *
  * Return: No Return
  */
@@ -197,7 +197,7 @@ void _type(char *h, int x64)
 	}
 }
 /**
- * _entry - print elf entry point access by directly accesing
+ * _entry - func do print elf entry point access
  * the elf header struct
  *
  * @h: header
@@ -216,7 +216,6 @@ void _entry(char *h, int x64)
 
 	if (h[5] == 1)
 	{
-		/* Little Endian */
 		i = count;
 		while (h[i] == 0 && i > 24)
 			i--;
@@ -231,7 +230,6 @@ void _entry(char *h, int x64)
 	}
 	else
 	{
-		/* Big Endian */
 
 		i = 24;
 		while (h[i] == 0)
@@ -249,27 +247,18 @@ void _entry(char *h, int x64)
 }
 
 /**
- * main - displays the information contained in the ELF header at
- * the start of an ELF file.
+ * main - func to displays information  in the ELF header at
+ * the start of  ELF file system.
  *
  * Usage: elf_header elf_filename
  * displayed information: (not less, not more)
- * Magic
- * Class
- * Data
- * Version
- * OS/ABI
- * ABI Version
- * Type
- * Entry point address
- *
- * @argc: Counts the number of parameters that go into main
- * @argv: Pointer of array of pointers containing strings entering main
+ * @argc: the number of parameters go into main
+ * @argv: Pointer of array pointers containing string
  *
  * Return: Always 0 on (Success)
  *
  * if the file is not an ELF file, or on error, exit with status code 98
- *  and display a comprehensive error message to stderr
+ *  and display an error message to stderr
  */
 int main(int argc, char **argv)
 {
