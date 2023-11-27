@@ -6,10 +6,10 @@ char *create_buffer(char *file);
 void close_file(int fd);
 
 /**
- * creates_buffer - function to do Allocates 1024 bytes for buffer.
- * @file: The name of the file buffer is chars for.
+ * creates_buffer - func can Allocates 1024 bytes for a buffer.
+ * @file: The name of the file buffer is storing chars for.
  *
- * Return: pointer to the newly-allocated buffer.
+ * Return: A pointer to the newly-allocated buffer.
  */
 char *creates_buffer(char *file)
 {
@@ -28,16 +28,16 @@ char *creates_buffer(char *file)
 }
 
 /**
- * close_file - function to Closes the file descriptors.
- * @fd: The file descriptor which will be closed.
+ * close_file - func Closes file descriptors.
+ * @fd: The file descriptor to be closed.
  */
 void close_file(int fd)
 {
-	int k;
+	int c;
 
-	k = close(fd);
+	c = close(fd);
 
-	if (k == -1)
+	if (c == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
 		exit(100);
@@ -45,16 +45,16 @@ void close_file(int fd)
 }
 
 /**
- * main - func will Copies the contents of a file to another file.
- * @argc: number of arguments supplied to the prog.
- * @argv: array of pointers to the argu.
+ * main - function do Copies the contents of a file to another file.
+ * @argc: number of arguments supplied to the program.
+ * @argv: array of pointers to the arguments.
  *
  * Return: 0 on success.
  *
- * Description: If the count is incorrect - exit code 97.
- * If file_from does not exist  - exit code 98.
- * If file_to cannot be created or written  - exit code 99.
- * If file_to or file_from cannot be closed - exit code 100.
+ * Description: If the argument count is incorrect - exit code 97.
+ * If file_from does not exist - exit code 98.
+ * If file_to cannot be created  - exit code 99.
+ * If file_to or file_from cannot be close - exit code 100.
  */
 int main(int argc, char *argv[])
 {
